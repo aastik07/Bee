@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Movie Ticket Booking System</title>
+</head>
+
+<body>
+
+    <h1>Online Movie Ticket Booking System</h1>
+
+    <script>
+
+        console.log("1. Checking Seat Availability...");
+
+        let seatsAvailable = true;
+
+        let booking = new Promise(function(resolve, reject) {
+
+            setTimeout(function() {
+
+                if (seatsAvailable) {
+                    resolve("2. Seats are Available");
+                } else {
+                    reject("No Seats Available");
+                }
+
+            }, 2000);
+
+        });
+
+        booking
+
+            .then(function(message) {
+                console.log(message);
+                return "3. Payment Processed Successfully";
+            })
+
+            .then(function(message) {
+                console.log(message);
+                return "4. Booking Confirmed";
+            })
+
+            .then(function(message) {
+                console.log(message);
+                return "5. Ticket Generated Successfully";
+            })
+
+            .catch(function(error) {
+                console.log("Error:", error);
+            });
+
+    </script>
+
+</body>
+</html>
